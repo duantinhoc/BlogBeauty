@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routine Buổi Tối - Phục Hồi Da</title>
+    <style>
+        :root {
+            --bg-soft-blue: #f0f4f8;
+            --card-white: #ffffff;
+            --step-blue: #7da1c4; 
+            --text-dark: #334455;
+            --accent-teal: #a8dadc;
+            --star-inactive: #ccc;
+            --star-active: #ffcc00;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: var(--bg-soft-blue);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1800px; 
+            width: 95%;
+            background: var(--card-white);
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            display: flex; 
+            overflow: hidden; 
+            align-items: stretch;
+            min-height: 850px;
+            margin-top: 20px;
+        }
+
+        .content-side {
+            flex: 1; /* Điều chỉnh lại tỷ lệ 1:1 để phần chữ rộng hơn chút */
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .image-container {
+            flex: 1; /* Điều chỉnh lại tỷ lệ 1:1 */
+            padding: 60px; /* TĂNG PADDING: Đây là cách làm ảnh nhỏ lại một chút so với khung */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fcfdfe; 
+        }
+
+        .image-side {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.pinimg.com/736x/bf/92/40/bf92407e27072c968eced5ba41c81b94.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            min-height: 700px; /* Giảm nhẹ chiều cao tối thiểu của ảnh */
+        }
+
+        h1 {
+            color: var(--step-blue);
+            text-transform: uppercase;
+            font-size: 32px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: 800;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: var(--text-dark);
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-title {
+            color: var(--step-blue);
+            font-size: 22px;
+            font-weight: bold;
+            border-left: 6px solid var(--accent-teal);
+            padding-left: 15px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .color-item {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 600;
+            background-color: #f9fbff;
+        }
+
+        .rating-box {
+            margin-top: 25px;
+            padding: 25px;
+            background: #fcfdfe;
+            border-radius: 20px;
+            border: 1px solid #e1e8f0;
+        }
+
+        .average-rating-container {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 5px;
+        }
+
+        .avg-score {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--step-blue);
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+            cursor: pointer;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .star {
+            color: var(--star-inactive);
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .star.selected { color: var(--star-active); }
+
+        .btn-reset {
+            margin-top: 10px;
+            font-size: 11px;
+            color: #bbccdd;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .back-home {
+            margin-top: 30px;
+            text-decoration: none;
+            color: #888;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        @media (max-width: 1200px) {
+            .container { flex-direction: column-reverse; min-height: auto; }
+            .content-side { padding: 40px; }
+            .image-container { padding: 30px; } /* Thu nhỏ padding trên mobile */
+            .image-side { min-height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content-side">
+            <h1>ROUTINE BUỔI TỐI</h1>
+            <p class="tagline">Chăm sóc da chuyên sâu sau một ngày dài.</p>
+
+            <p class="intro-text">
+                Tẩy trang – Rửa mặt – Toner – Serum – Kem dưỡng giúp da phục hồi và sáng khỏe.
+            </p>
+
+            <div class="section-title">Các bước thực hiện</div>
+            <ul>
+                <li><strong>Double Cleansing:</strong> Tẩy trang và rửa mặt.</li>
+                <li><strong>Cân bằng da:</strong> Cấp ẩm bằng Toner.</li>
+                <li><strong>Đặc trị:</strong> Serum phục hồi.</li>
+                <li><strong>Khóa ẩm:</strong> Kem dưỡng ban đêm.</li>
+            </ul>
+
+            <div class="section-title">Lợi ích</div>
+            <div class="color-grid">
+                <div class="color-item" style="border-top: 5px solid #a8dadc;">Phục hồi da</div>
+                <div class="color-item" style="border-top: 5px solid #7da1c4;">Tăng Collagen</div>
+                <div class="color-item" style="border-top: 5px solid #a8dadc;">Làm sáng da</div>
+                <div class="color-item" style="border-top: 5px solid #7da1c4;">Thư giãn</div>
+            </div>
+
+            <div class="section-title">Đánh giá</div>
+            <div class="rating-box">
+                <div class="average-rating-container">
+                    <span class="avg-score" id="avg-display">0.0</span>
+                    <span class="total-count" id="count-display" style="color:#8899aa; font-size:14px;">(0 lượt)</span>
+                </div>
+                <div class="stars" id="star-container">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <div class="rating-result-text" id="rating-text" style="font-size: 14px; font-weight: 600; color: var(--step-blue);">Bạn thấy Routine này thế nào?</div>
+                <button class="btn-reset" onclick="resetRoutineData()">Làm mới dữ liệu</button>
+            </div>
+            
+            <a href="index.html" class="back-home">← Quay về trang chính</a>
+        </div>
+
+        <div class="image-container">
+            <div class="image-side"></div>
+        </div>
+    </div>
+
+    <script>
+        const KEY_SCORE = 'routine_total_score_v2';
+        const KEY_COUNT = 'routine_total_count_v2';
+        const KEY_VOTED = 'routine_user_voted_v2';
+
+        const stars = document.querySelectorAll('.star');
+        const ratingText = document.getElementById('rating-text');
+        const avgDisplay = document.getElementById('avg-display');
+        const countDisplay = document.getElementById('count-display');
+
+        function initRoutineRating() {
+            let score = parseFloat(localStorage.getItem(KEY_SCORE)) || 0;
+            let count = parseInt(localStorage.getItem(KEY_COUNT)) || 0;
+            let userVoted = localStorage.getItem(KEY_VOTED);
+            let average = count > 0 ? (score / count).toFixed(1) : "0.0";
+
+            avgDisplay.innerText = average;
+            countDisplay.innerText = `(${count} lượt đánh giá)`;
+
+            if (userVoted) {
+                ratingText.innerText = `Bạn đã đánh giá ${userVoted} sao.`;
+                highlightStars(userVoted);
+                document.getElementById('star-container').style.pointerEvents = 'none';
+            }
+        }
+
+        function highlightStars(value) {
+            stars.forEach(s => {
+                s.classList.toggle('selected', parseInt(s.getAttribute('data-value')) <= parseInt(value));
+            });
+        }
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                let score = parseFloat(localStorage.getItem(KEY_SCORE)) || 0;
+                let count = parseInt(localStorage.getItem(KEY_COUNT)) || 0;
+                localStorage.setItem(KEY_SCORE, score + value);
+                localStorage.setItem(KEY_COUNT, count + 1);
+                localStorage.setItem(KEY_VOTED, value);
+                initRoutineRating();
+            });
+            star.addEventListener('mouseover', function() {
+                if (!localStorage.getItem(KEY_VOTED)) highlightStars(this.getAttribute('data-value'));
+            });
+        });
+
+        function resetRoutineData() {
+            localStorage.clear();
+            location.reload();
+        }
+
+        initRoutineRating();
+    </script>
+</body>
+</html>

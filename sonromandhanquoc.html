@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế Giới Son Romand - Bố cục Ngang Dài</title>
+    <style>
+        :root {
+            --bg-pink: #fdf2f6;
+            --card-white: #ffffff;
+            --title-pink: #d6709d;
+            --button-pink: #f4a7bd;
+            --text-gray: #444444;
+            --accent-red: #9c1b33;
+            --star-color: #ffcc00;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: var(--bg-pink);
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            background: var(--card-white);
+            border-radius: 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            display: flex; 
+            overflow: hidden; 
+            align-items: stretch;
+        }
+
+        .content-side {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .image-side {
+            flex: 1;
+            background-image: url('https://i.pinimg.com/736x/d2/4e/b3/d24eb3c7fcbe573882b716be2b0694dd.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 800px;
+            margin: 20px;
+            border-radius: 25px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--title-pink);
+            text-transform: uppercase;
+            font-size: 32px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: var(--text-gray);
+            font-size: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: var(--accent-red);
+            font-size: 22px;
+            font-weight: bold;
+            border-left: 6px solid var(--button-pink);
+            padding-left: 15px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--text-gray);
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .color-item {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 500;
+            background-color: #fff9f9;
+        }
+
+        /* --- PHẦN ĐÁNH GIÁ THỰC TẾ --- */
+        .rating-box {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fffafa;
+            border-radius: 20px;
+            border: 1px solid #fce4ec;
+        }
+
+        .average-rating {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-red);
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 5px;
+        }
+
+        .star {
+            font-size: 30px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out, transform 0.2s;
+        }
+
+        .star:hover,
+        .star:hover ~ .star {
+            color: var(--star-color);
+            transform: scale(1.1);
+        }
+
+        .star.active,
+        .star.active ~ .star {
+            color: var(--star-color);
+        }
+
+        #rating-text {
+            font-size: 14px;
+            margin-top: 10px;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+
+        .btn-reset {
+            margin-top: 15px;
+            font-size: 11px;
+            color: #ccc;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 0;
+        }
+
+        .back-home {
+            margin-top: 40px;
+            text-decoration: none;
+            color: #888;
+            font-size: 16px;
+            display: block;
+        }
+
+        .back-home:hover {
+            color: var(--title-pink);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .container { flex-direction: column-reverse; }
+            .image-side { min-height: 450px; margin: 15px; }
+            .content-side { padding: 35px; }
+            h1, .tagline { text-align: center; }
+            .stars { justify-content: center; }
+            .average-rating { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content-side">
+            <h1>Son Romand Hàn Quốc</h1>
+            <p class="tagline">Son tint mịn môi, màu tự nhiên và dễ sử dụng hàng ngày.</p>
+
+            <p class="intro-text">
+                Romand là thương hiệu mỹ phẩm đình đám từ Hàn Quốc, dẫn đầu xu hướng với những dòng son có bảng màu cực kỳ thời thượng.
+            </p>
+
+            <div class="section-title">Các dòng son nổi bật</div>
+            <ul>
+                <li><strong>Juicy Lasting Tint:</strong> Hiệu ứng căng mọng như trái cây.</li>
+                <li><strong>Zero Velvet Tint:</strong> Lớp finish mịn lì như lụa.</li>
+                <li><strong>Glasting Water:</strong> Màng nước trong suốt cực xinh.</li>
+            </ul>
+
+            <div class="section-title">Bảng màu được yêu thích</div>
+            <div class="color-grid">
+                <div class="color-item" style="border-top: 5px solid #a34b37;">#13 Eat Dotori</div>
+                <div class="color-item" style="border-top: 5px solid #b56b6f;">#14 Almond Rose</div>
+                <div class="color-item" style="border-top: 5px solid #9e5d6d;">#15 Bare Fig</div>
+                <div class="color-item" style="border-top: 5px solid #7a162a;">#16 Plum Coke</div>
+            </div>
+
+            <div class="section-title">Đánh giá cộng đồng</div>
+            <div class="rating-box">
+                <div id="avg-display" class="average-rating">0.0</div>
+                
+                <div class="stars" id="star-rating">
+                    <span class="star" data-value="5">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="1">★</span>
+                </div>
+                <p id="rating-text">Hãy để lại đánh giá thực tế của bạn!</p>
+                <button class="btn-reset" onclick="resetRomandData()">Xóa dữ liệu đánh giá</button>
+            </div>
+            
+            <a href="index.html" class="back-home">← Quay về trang chính của tôi</a>
+        </div>
+
+        <div class="image-side"></div>
+    </div>
+
+    <script>
+        // Khóa lưu trữ riêng cho Romand
+        const KEY_ROMAND_SCORE = 'romand_actual_total_score';
+        const KEY_ROMAND_COUNT = 'romand_actual_total_count';
+        const KEY_ROMAND_USER_VOTED = 'romand_user_voted_value';
+
+        const stars = document.querySelectorAll('.star');
+        const ratingText = document.getElementById('rating-text');
+        const avgDisplay = document.getElementById('avg-display');
+        const starContainer = document.getElementById('star-rating');
+
+        function initRomandRating() {
+            // Lấy dữ liệu từ localStorage
+            let totalScore = parseFloat(localStorage.getItem(KEY_ROMAND_SCORE)) || 0;
+            let totalCount = parseInt(localStorage.getItem(KEY_ROMAND_COUNT)) || 0;
+            let userVoted = localStorage.getItem(KEY_ROMAND_USER_VOTED);
+
+            // Tính trung bình
+            let average = totalCount > 0 ? (totalScore / totalCount).toFixed(1) : "0.0";
+
+            // Cập nhật giao diện
+            avgDisplay.innerHTML = `${average} <span style="font-size: 18px; color: #888;">/ 5.0</span> <span style="font-size: 14px; font-weight: normal; color: #aaa;">(${totalCount} lượt đánh giá thực tế)</span>`;
+
+            if (userVoted) {
+                ratingText.innerText = "Bạn đã đánh giá " + userVoted + " sao cho sản phẩm này. Cảm ơn!";
+                highlightStars(userVoted);
+                starContainer.style.pointerEvents = 'none'; // Khóa không cho nhấn tiếp
+            }
+        }
+
+        function highlightStars(value) {
+            stars.forEach(s => {
+                s.classList.remove('active');
+                if (parseInt(s.getAttribute('data-value')) <= parseInt(value)) {
+                    s.classList.add('active');
+                }
+            });
+        }
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                
+                let currentScore = parseFloat(localStorage.getItem(KEY_ROMAND_SCORE)) || 0;
+                let currentCount = parseInt(localStorage.getItem(KEY_ROMAND_COUNT)) || 0;
+
+                // Lưu dữ liệu mới
+                localStorage.setItem(KEY_ROMAND_SCORE, currentScore + value);
+                localStorage.setItem(KEY_ROMAND_COUNT, currentCount + 1);
+                localStorage.setItem(KEY_ROMAND_USER_VOTED, value);
+
+                initRomandRating();
+                alert("Cảm ơn bạn đã đánh giá thực tế cho Romand!");
+            });
+
+            // Hiệu ứng hover (chỉ khi chưa đánh giá)
+            star.addEventListener('mouseover', function() {
+                if (!localStorage.getItem(KEY_ROMAND_USER_VOTED)) {
+                    highlightStars(this.getAttribute('data-value'));
+                }
+            });
+        });
+
+        // Trả lại trạng thái cũ khi chuột rời đi
+        starContainer.addEventListener('mouseleave', function() {
+            const votedValue = localStorage.getItem(KEY_ROMAND_USER_VOTED) || 0;
+            highlightStars(votedValue);
+        });
+
+        function resetRomandData() {
+            localStorage.removeItem(KEY_ROMAND_SCORE);
+            localStorage.removeItem(KEY_ROMAND_COUNT);
+            localStorage.removeItem(KEY_ROMAND_USER_VOTED);
+            location.reload();
+        }
+
+        // Khởi tạo khi tải trang
+        initRomandRating();
+    </script>
+
+</body>
+</html>

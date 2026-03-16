@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phấn Phủ Carslan - Kiềm Dầu Đỉnh Cao</title>
+    <style>
+        :root {
+            --bg-gray: #f5f5f5;
+            --card-white: #ffffff;
+            --carslan-gold: #c9a45c;
+            --carslan-black: #1a1a1a;
+            --text-dark: #333333;
+            --accent-gold-light: #f4ece1;
+            --star-inactive: #ccc;
+            --star-active: #ffcc00;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            background: var(--card-white);
+            border-radius: 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            display: flex; 
+            overflow: hidden; 
+            align-items: stretch;
+        }
+
+        .content-side {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .image-side {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 60px;
+            padding-right: 40px;
+            padding-left: 20px;
+        }
+
+        .image-box {
+            width: 100%;
+            height: 650px; 
+            background-image: url('https://i.pinimg.com/736x/0f/6b/fb/0f6bfb8bd65cd3981a31b7b538f6862f.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15); 
+            border: 1px solid #eee;
+        }
+
+        h1 {
+            color: var(--carslan-black);
+            text-transform: uppercase;
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-align: left;
+            font-weight: 800;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: var(--carslan-gold);
+            font-size: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .section-title {
+            color: var(--carslan-black);
+            font-size: 22px;
+            font-weight: bold;
+            border-left: 6px solid var(--carslan-gold);
+            padding-left: 15px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .color-item {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 500;
+            background-color: var(--accent-gold-light);
+            color: var(--carslan-black);
+        }
+
+        /* --- PHẦN ĐÁNH GIÁ THỰC TẾ --- */
+        .rating-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: #fafafa;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            text-align: left;
+        }
+
+        .rating-summary-header {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .avg-score {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--carslan-black);
+        }
+
+        .total-count {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+            cursor: pointer;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .star {
+            color: var(--star-inactive);
+            transition: transform 0.2s;
+        }
+
+        .star:hover {
+            transform: scale(1.15);
+        }
+
+        .star.selected {
+            color: var(--star-active);
+        }
+
+        .rating-result {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--carslan-gold);
+        }
+
+        .btn-reset {
+            margin-top: 15px;
+            font-size: 11px;
+            color: #bbb;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 0;
+        }
+
+        .back-home {
+            margin-top: 40px;
+            text-decoration: none;
+            color: #888;
+            font-size: 16px;
+            display: block;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .container { flex-direction: column-reverse; }
+            .image-side { padding: 20px; width: 100%; align-items: center; }
+            .image-box { height: 400px; }
+            .content-side { padding: 35px; }
+            h1, .tagline { text-align: center; }
+            .rating-summary-header { justify-content: center; }
+            .stars { justify-content: center; }
+            .rating-result { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content-side">
+            <h1>PHẤN PHỦ CARSLAN</h1>
+            <p class="tagline">Kiềm dầu bền bỉ - Mỏng nhẹ tự nhiên</p>
+
+            <p class="intro-text">
+                Carslan là thương hiệu mỹ phẩm nội địa Trung cao cấp, nổi tiếng toàn cầu với dòng phấn phủ có khả năng "đóng băng" lớp nền, giữ cho làn da khô thoáng suốt 24 giờ.
+            </p>
+
+            <div class="section-title">Ưu điểm vượt trội</div>
+            <ul>
+                <li><strong>Công nghệ độc quyền:</strong> Hạt phấn siêu nhỏ không gây bí da.</li>
+                <li><strong>Kiềm dầu tuyệt đối:</strong> Hấp thụ bã nhờn tức thì.</li>
+                <li><strong>Chống nước:</strong> Giữ lớp nền bền đẹp cả ngày.</li>
+            </ul>
+
+            <div class="section-title">Các dòng sản phẩm hot</div>
+            <div class="color-grid">
+                <div class="color-item" style="border-top: 5px solid #000;">Black Magnetic (Lì)</div>
+                <div class="color-item" style="border-top: 5px solid #c9a45c;">Pink Soft Focus (Mịn)</div>
+                <div class="color-item" style="border-top: 5px solid #000;">Bản Nén (Tiện lợi)</div>
+                <div class="color-item" style="border-top: 5px solid #c9a45c;">Bản Bột (Tự nhiên)</div>
+            </div>
+
+            <div class="rating-section">
+                <div class="rating-summary-header">
+                    <span class="avg-score" id="avg-display">0.0</span>
+                    <span class="total-count" id="count-display">(0 đánh giá thực tế)</span>
+                </div>
+                <div class="stars" id="star-container">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <div class="rating-result" id="rating-text">Hãy để lại đánh giá của bạn!</div>
+                <button class="btn-reset" onclick="resetCarslanData()">Xóa dữ liệu để đánh giá lại</button>
+            </div>
+            
+            <a href="index.html" class="back-home">← Quay về trang chính của tôi</a>
+        </div>
+
+        <div class="image-side">
+            <div class="image-box"></div>
+        </div>
+    </div>
+
+    <script>
+        // Khóa lưu trữ riêng cho Carslan để không bị lẫn với Judydoll
+        const KEY_CARSLAN_SCORE = 'carslan_actual_score';
+        const KEY_CARSLAN_COUNT = 'carslan_actual_count';
+        const KEY_CARSLAN_VOTED = 'carslan_user_voted';
+
+        const stars = document.querySelectorAll('.star');
+        const ratingText = document.getElementById('rating-text');
+        const avgDisplay = document.getElementById('avg-display');
+        const countDisplay = document.getElementById('count-display');
+        const starContainer = document.getElementById('star-container');
+
+        function initCarslanRating() {
+            let score = parseFloat(localStorage.getItem(KEY_CARSLAN_SCORE)) || 0;
+            let count = parseInt(localStorage.getItem(KEY_CARSLAN_COUNT)) || 0;
+            let userVotedValue = localStorage.getItem(KEY_CARSLAN_VOTED);
+
+            let average = count > 0 ? (score / count).toFixed(1) : "0.0";
+
+            avgDisplay.innerText = average;
+            countDisplay.innerText = `(${count} lượt đánh giá thực tế)`;
+
+            if (userVotedValue) {
+                ratingText.innerText = `Bạn đã đánh giá sản phẩm này ${userVotedValue}/5 sao.`;
+                highlightStars(userVotedValue);
+                starContainer.style.pointerEvents = 'none'; // Khóa không cho nhấn lại
+            }
+        }
+
+        function highlightStars(value) {
+            stars.forEach(s => {
+                s.classList.toggle('selected', s.getAttribute('data-value') <= value);
+            });
+        }
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(this.getAttribute('data-value'));
+                
+                let score = parseFloat(localStorage.getItem(KEY_CARSLAN_SCORE)) || 0;
+                let count = parseInt(localStorage.getItem(KEY_CARSLAN_COUNT)) || 0;
+
+                localStorage.setItem(KEY_CARSLAN_SCORE, score + value);
+                localStorage.setItem(KEY_CARSLAN_COUNT, count + 1);
+                localStorage.setItem(KEY_CARSLAN_VOTED, value);
+
+                initCarslanRating();
+                alert("Cảm ơn bạn đã đóng góp đánh giá thực tế!");
+            });
+
+            star.addEventListener('mouseover', function() {
+                if (!localStorage.getItem(KEY_CARSLAN_VOTED)) {
+                    highlightStars(this.getAttribute('data-value'));
+                }
+            });
+        });
+
+        starContainer.addEventListener('mouseleave', function() {
+            const userVotedValue = localStorage.getItem(KEY_CARSLAN_VOTED) || 0;
+            highlightStars(userVotedValue);
+        });
+
+        function resetCarslanData() {
+            localStorage.removeItem(KEY_CARSLAN_SCORE);
+            localStorage.removeItem(KEY_CARSLAN_COUNT);
+            localStorage.removeItem(KEY_CARSLAN_VOTED);
+            location.reload();
+        }
+
+        // Chạy khởi tạo
+        initCarslanRating();
+    </script>
+
+</body>
+</html>
