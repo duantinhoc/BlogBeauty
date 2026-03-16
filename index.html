@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEAUTY BLOG CỦA NHƯ & HUY</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff8fb;
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+    background-image: url('https://i.pinimg.com/1200x/8b/58/2d/8b582d846991fee625635ec3c11e515a.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 38px;
+    letter-spacing: 3px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* NAV */
+nav {
+    background: #ffe6f0;
+    text-align: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    color: #cc6699;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b84d86;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 0;
+}
+
+/* ABOUT */
+.about {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #d98cb3;
+    letter-spacing: 1px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.post {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.post:hover {
+    transform: translateY(-8px);
+}
+
+.post img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post h3 {
+    margin-top: 0;
+    color: #cc6699;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #f4a6c1;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.button:hover {
+    background: #e38db0;
+}
+
+/* CONTACT */
+.contact {
+    background: #fff0f6;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.contact a {
+    color: #cc6699;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    background: #ffe6f0;
+    text-align: center;
+    padding: 20px;
+    color: #cc6699;
+    margin-top: 60px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>BEAUTY BLOG CỦA NHƯ & HUY</h1>
+</header>
+
+<nav>
+    <a href="#">TRANG CHỦ</a>
+    <a href="#review">REVIEW</a>
+    <a href="#skincare">SKINCARE</a>
+    <a href="#contact">LIÊN HỆ</a>
+</nav>
+
+<div class="container">
+
+    <div class="about">
+        <h2>GIỚI THIỆU</h2>
+        <p>Xin chào, tụi mình là Như và Huy. Đây là blog cá nhân nơi tụi mình chia sẻ cảm nhận chân thật về mỹ phẩm và skincare mình đã sử dụng.</p>
+    </div>
+
+    <h2 class="section-title" id="review">REVIEW MỸ PHẨM</h2>
+
+    <div class="grid">
+        <div class="post">
+            <img src="https://i.pinimg.com/736x/d2/4e/b3/d24eb3c7fcbe573882b716be2b0694dd.jpg">
+            <div class="post-content">
+                <h3>SON ROMAND HÀN QUỐC</h3>
+                <p>Son tint mịn môi, màu tự nhiên và dễ sử dụng hàng ngày.</p>
+                <a class="button" href="sonromandhanquoc.html">XEM CHI TIẾT</a>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="https://i.pinimg.com/736x/0f/6b/fb/0f6bfb8bd65cd3981a31b7b538f6862f.jpg">
+            <div class="post-content">
+                <h3>PHẤN PHỦ CARSLAN</h3>
+                <p>Kiềm dầu tốt, giúp lớp makeup mịn và lâu trôi hơn.</p>
+                <a class="button" href="phanphucarslan.html">XEM CHI TIẾT</a>
+            </div>
+        </div>
+
+        <div class="post">
+            <img src="https://i.pinimg.com/1200x/83/82/7f/83827f5d2541cfed1c8d84c7d0573b96.jpg">
+            <div class="post-content">
+                <h3>TẠO KHỐI JUDYDOLL</h3>
+                <p>Tạo khối nhẹ nhàng, dễ tán và phù hợp makeup tự nhiên.</p>
+                <a class="button" href="taokhoijudydoll.html">XEM CHI TIẾT</a>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="skincare">SKINCARE</h2>
+
+    <div class="grid">
+        <div class="post">
+            <img src="https://i.pinimg.com/736x/bf/92/40/bf92407e27072c968eced5ba41c81b94.jpg">
+            <div class="post-content">
+                <h3>ROUTINE BUỔI TỐI</h3>
+                <p>Tẩy trang – Rửa mặt – Toner – Serum – Kem dưỡng giúp da phục hồi và sáng khỏe.</p>
+                <a class="button" href="rountine.html">XEM CHI TIẾT</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+        <h2>LIÊN HỆ</h2>
+        <p>Email: 
+        <a href="mailto:nguyenngocquynhnhu3939@gmail.com">
+        nguyenngocquynhnhu3939@gmail.com
+        </a>
+        </p>
+        <p>
+        <a href="mailto:huynguyen140608@gmail.com">
+            huynguyen140608@gmail.com
+        </a>
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 BEAUTY BLOG CỦA NHƯ & HUY
+</footer>
+
+</body>
+</html>
